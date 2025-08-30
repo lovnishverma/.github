@@ -1,0 +1,11 @@
+# CODEOWNERS file
+# Specify default reviewers for different parts of the repo
+
+# All files owned by
+* @lovnishverma
+
+# JS files owned by
+# *.js @lovnishverma
+
+# Backend owned by
+# /backend/ @lovnishverma
