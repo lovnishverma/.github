@@ -11,7 +11,7 @@ We welcome contributions of all kinds, including bug reports, feature requests, 
 2. **Create a new branch** for your work:  
    ```bash
    git checkout -b feature/your-feature-name
-````
+   ````
 
 3. **Make your changes** (code, docs, tests).
 4. **Commit** your changes with a clear message:
