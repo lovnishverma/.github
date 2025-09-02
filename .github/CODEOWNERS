@@ -38,7 +38,7 @@ docker-compose.yml @lovnishverma
 /tests/  @lovnishverma
 
 # -------------------------------------------------------------------
-# Example (i will add collaborators/teams later):
+# I will add collaborators/teams later:
 # /frontend/ @your-org/frontend-team
 # /backend/  @your-org/backend-team
 # *.md       @tech-writer
