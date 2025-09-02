@@ -1,2 +1,35 @@
+# These are supported funding model platforms
+
+# GitHub Sponsors
 github: lovnishverma
-custom: ["https://buymeacoffee.com/lovnishverma"]
+
+# Patreon
+# patreon: lovnishverma
+
+# Open Collective
+# open_collective: lovnishverma
+
+# Ko-fi
+# ko_fi: lovnishverma
+
+# Tidelift
+# tidelift: npm/package-name
+
+# Community Bridge
+# community_bridge: project-name
+
+# Liberapay
+# liberapay: lovnishverma
+
+# IssueHunt
+# issuehunt: lovnishverma
+
+# LFX Crowdfunding
+# lfx_crowdfunding: project-name
+
+# Custom funding URLs
+custom: 
+  - "https://buymeacoffee.com/lovnishverma"
+  - "https://paypal.me/lovnishverma"
+  # - "https://razorpay.me/@lovnishverma"
+  # - "https://upi.pay/lovnishverma@paytm"
