@@ -1,4 +1,3 @@
-```yaml
 name: "🐛 Bug Report"
 description: "Create a report to help us improve"
 title: "[BUG] "
@@ -125,5 +124,4 @@ body:
       label: "📄 Additional Context"
       description: "Add any other context about the problem here"
       placeholder: "Any additional information that might be helpful..."
-```
-Do you also want me to create **separate templates for Feature Requests and Questions** (so your repo has a complete issue flow), or just keep it limited to bug reports?
+
