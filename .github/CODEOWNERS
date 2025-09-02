@@ -1,11 +1,45 @@
-# CODEOWNERS file
-# Specify default reviewers for different parts of the repo
+# -------------------------------------------------------------------
+# CODEOWNERS
+# This file defines who is responsible (reviewers/approvers) for code
+# in different parts of the repository.
+#
+# Format:
+#   <pattern> <owner(s)>
+#
+# Notes:
+# - Owners can be individuals (@username) or teams (@org/team-name).
+# - Multiple owners can be assigned by listing them space-separated.
+# - The last matching pattern takes precedence.
+# -------------------------------------------------------------------
 
-# All files owned by
+# 🔹 Default: all files in the repo
 * @lovnishverma
 
-# JS files owned by
-# *.js @lovnishverma
+# 🔹 JavaScript / Frontend code
+# All .js and .ts files
+*.js    @lovnishverma
+*.ts    @lovnishverma
+/frontend/ @lovnishverma
 
-# Backend owned by
-# /backend/ @lovnishverma
+# 🔹 Backend code
+/backend/ @lovnishverma
+
+# 🔹 Configuration & CI/CD
+/.github/ @lovnishverma
+/.gitlab/ @lovnishverma
+Dockerfile @lovnishverma
+docker-compose.yml @lovnishverma
+
+# 🔹 Documentation
+/docs/   @lovnishverma
+*.md     @lovnishverma
+
+# 🔹 Tests
+/tests/  @lovnishverma
+
+# -------------------------------------------------------------------
+# Example (i will add collaborators/teams later):
+# /frontend/ @your-org/frontend-team
+# /backend/  @your-org/backend-team
+# *.md       @tech-writer
+# -------------------------------------------------------------------
