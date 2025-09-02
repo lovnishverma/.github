@@ -1,43 +1,159 @@
-# 🚀 Pull Request Template
+# 🚀 Pull Request
 
-## 📌 Description
-Please include a clear and concise summary of the changes made.  
-Reference related issue(s) with keywords like `Closes #123` or `Fixes #456`.
+## 📌 Summary
+<!-- Provide a brief, clear summary of your changes -->
 
----
+
+## 🔗 Related Issues
+<!-- Link related issues using keywords -->
+- Closes #
+- Fixes #
+- Related to #
 
 ## 🛠 Type of Change
-Select the type(s) of change your PR introduces:
-
-- [ ] 🐛 Bug fix (non-breaking change that fixes an issue)
-- [ ] ✨ New feature (non-breaking change that adds functionality)
-- [ ] 🔥 Breaking change (fix or feature that would cause existing functionality to not work as expected)
-- [ ] 📝 Documentation update
-- [ ] ⚙️ Refactor (improve code without changing functionality)
-- [ ] ✅ Tests (add or update tests only)
-- [ ] Other (please describe):
-
----
-
-## ✅ Checklist
-Please ensure your PR meets the following requirements:
-
-- [ ] My code follows the project’s style guidelines  
-- [ ] I have performed a **self-review** of my code  
-- [ ] I have added **comments** where necessary  
-- [ ] I have added/updated **tests** that prove my fix is effective  
-- [ ] All **new and existing tests pass** locally  
-- [ ] I have updated relevant **documentation** (if applicable)  
-- [ ] I used [Conventional Commits](https://www.conventionalcommits.org/) for commit messages  
+<!-- Mark all that apply with [x] -->
+- [ ] 🐛 **Bug fix** (non-breaking change that fixes an issue)
+- [ ] ✨ **New feature** (non-breaking change that adds functionality)
+- [ ] 🔥 **Breaking change** (fix or feature that would cause existing functionality to not work as expected)
+- [ ] 📝 **Documentation** (updates to docs, README, comments)
+- [ ] ⚙️ **Refactor** (code improvement without functionality changes)
+- [ ] 🎨 **Style** (formatting, missing semicolons, etc; no code change)
+- [ ] ✅ **Tests** (adding missing tests or correcting existing tests)
+- [ ] 🚀 **Performance** (code changes that improve performance)
+- [ ] 🧹 **Chore** (updating build tasks, package manager configs, etc)
 
 ---
 
-## 📷 Screenshots (if applicable)
+## 🧪 Testing
+<!-- Describe how you tested your changes -->
 
-<img width="220" height="208" alt="image" src="https://github.com/user-attachments/assets/9d244904-4069-4d40-b734-0b06ff25f4ca" />
+### ✅ Test Results
+- [ ] All existing tests pass
+- [ ] New tests added and passing
+- [ ] Manual testing completed
+- [ ] Cross-browser testing (if applicable)
+- [ ] Mobile responsiveness checked (if applicable)
 
+### 🔍 Test Environment
+- **OS**: 
+- **Browser** (if applicable): 
+- **Version**: 
 
 ---
 
-## 💬 Additional Notes
-Add any extra context, implementation details, or follow-up tasks here.
+## 📷 Visual Changes
+<!-- Include screenshots, GIFs, or videos for UI changes -->
+
+### Before
+<!-- Screenshot or description of current state -->
+
+### After
+<!-- Screenshot or description of new state -->
+
+---
+
+## ⚠️ Breaking Changes
+<!-- List any breaking changes and migration instructions -->
+
+- [ ] No breaking changes
+- [ ] Breaking changes (describe below):
+
+<!-- If breaking changes exist, provide migration guide -->
+
+---
+
+## 🚀 Performance Impact
+<!-- Describe any performance implications -->
+
+- [ ] No performance impact
+- [ ] Performance improvement
+- [ ] Performance regression (explain why necessary):
+
+---
+
+## 📋 Code Quality Checklist
+<!-- Ensure your code meets quality standards -->
+
+### 🔍 Code Review
+- [ ] I have performed a **self-review** of my code
+- [ ] I have added **meaningful comments** where necessary
+- [ ] I have removed any **console.log**, **debugger**, or debug code
+- [ ] I have checked for **unused imports/variables**
+- [ ] My code follows the project's **coding standards**
+
+### 📚 Documentation
+- [ ] I have updated relevant **documentation**
+- [ ] I have updated **README.md** (if applicable)
+- [ ] I have added **JSDoc/comments** for new functions
+- [ ] I have updated **API documentation** (if applicable)
+
+### 🧪 Testing & Quality
+- [ ] I have added **unit tests** for new functionality
+- [ ] I have added **integration tests** (if applicable)
+- [ ] I have tested **edge cases**
+- [ ] I have ensured **backwards compatibility** (if applicable)
+- [ ] I have used [Conventional Commits](https://www.conventionalcommits.org/) for commit messages
+
+---
+
+## 🔐 Security Considerations
+<!-- Address any security implications -->
+
+- [ ] No security implications
+- [ ] Security review needed
+- [ ] New dependencies added (list below):
+
+---
+
+## 📦 Dependencies
+<!-- List any new dependencies or version updates -->
+
+### Added
+- None
+
+### Updated
+- None
+
+### Removed
+- None
+
+---
+
+## 🎯 Deployment Notes
+<!-- Instructions for deployment or special considerations -->
+
+- [ ] No special deployment steps required
+- [ ] Requires database migrations
+- [ ] Requires environment variable updates
+- [ ] Requires server restart
+- [ ] Other (specify):
+
+---
+
+## 👥 Reviewers
+<!-- Tag specific reviewers if needed -->
+@lovnishverma 
+
+### Review Focus Areas
+<!-- Help reviewers know what to focus on -->
+- [ ] Code logic and implementation
+- [ ] Performance implications
+- [ ] Security considerations
+- [ ] User experience
+- [ ] Documentation accuracy
+
+---
+
+## 🚀 Post-Merge Tasks
+<!-- List any tasks to complete after merging -->
+
+- [ ] Update changelog
+- [ ] Deploy to staging
+- [ ] Update related documentation
+- [ ] Notify stakeholders
+- [ ] Monitor for issues
+
+---
+
+## 💬 Additional Context
+<!-- Add any extra context, implementation details, or notes for reviewers -->
