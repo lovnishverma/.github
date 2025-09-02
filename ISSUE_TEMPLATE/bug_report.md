@@ -1,3 +1,6 @@
+# 🐛 Bug Report
+
+```yaml
 name: "🐛 Bug Report"
 description: "Create a report to help us improve"
 title: "[BUG] "
@@ -124,4 +127,4 @@ body:
       label: "📄 Additional Context"
       description: "Add any other context about the problem here"
       placeholder: "Any additional information that might be helpful..."
-
+````
