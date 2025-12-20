@@ -205,5 +205,5 @@ For **critical security issues** requiring immediate attention:
 
 ---
 
-*Last Updated: September 2025*
-*Next Review: December 2025*
+*Last Updated: December 2025*
+*Next Review: December 2026*
