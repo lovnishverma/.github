@@ -1,77 +1,100 @@
 name: lovnishverma
 on:
   schedule:
-    # Run every 30 minutes (24/7)
-    - cron: '*/30 * * * *'
-  
+    # Run once a day at 04:00 UTC (which is 09:30 AM IST)
+    - cron: '0 4 * * *'
   workflow_dispatch:
 
 jobs:
-  sync:
+  daily-sync:
     runs-on: ubuntu-latest
     permissions:
       contents: write
-      
+    env:
+      # Force the script to use India Standard Time
+      TZ: 'Asia/Kolkata'
+
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v6
+        uses: actions/checkout@v4
         with:
-          fetch-depth: 1  # <--- CHANGED: Keeps the action fast even with 10k+ commits
-          
+          fetch-depth: 1
+
       - name: Configure Git
         run: |
           git config --global user.name "lovnishverma"
           git config --global user.email "princelv84@gmail.com"
 
-      - name: Generate High-Density Commits
+      - name: 'The Gatekeeper: Check for breaks'
+        id: check_gate
+        run: |
+          # 1. CHECK WEEKEND (in IST)
+          DAY=$(date +%u) # 6=Sat, 7=Sun
+          
+          # 2. ROLL THE DICE
+          # Even humans miss a day sometimes.
+          # 10% chance to skip on Weekdays
+          # 50% chance to skip on Weekends (Relaxing)
+          
+          CHANCE=$(( RANDOM % 100 ))
+          THRESHOLD=10 
+          
+          if [ $DAY -ge 6 ]; then 
+             echo "It's the weekend (IST). Higher chance of skipping."
+             THRESHOLD=50
+          fi
+
+          if [ $CHANCE -lt $THRESHOLD ]; then
+            echo "Dice rolled $CHANCE (Threshold $THRESHOLD). Taking the day off."
+            echo "skip=true" >> $GITHUB_OUTPUT
+            exit 0
+          fi
+          
+          echo "skip=false" >> $GITHUB_OUTPUT
+
+      - name: Generate Natural Commits
+        if: steps.check_gate.outputs.skip == 'false'
         run: |
           mkdir -p .sync/density
           
-          # Randomly decide how many commits (5 to 15)
-          COMMIT_COUNT=$(( ( RANDOM % 11 ) + 5 ))
+          # Generate a realistic workload for the day
+          # 1 to 4 commits
+          COMMIT_COUNT=$(( ( RANDOM % 4 ) + 1 ))
           
-          echo "Generating $COMMIT_COUNT commits..."
+          echo "Generating $COMMIT_COUNT commits for today (IST)..."
           
           for i in $(seq 1 $COMMIT_COUNT); do
             TIMESTAMP=$(date '+%Y-%m-%d %H:%M:%S.%N')
-            echo "Log entry $i: $TIMESTAMP - Random: $RANDOM" >> .sync/density/trace.log
-            
+            echo "$TIMESTAMP - Daily update" >> .sync/density/trace.log
             git add .sync/density/trace.log
             
             MESSAGES=(
-              "Update density matrix $RANDOM"
-              "Refine sync logic parameters"
-              "Optimize background process"
-              "Incremental data flush"
-              "Update trace logs"
-              "System heartbeat pulse"
-              "Re-index search nodes"
-              "Cache invalidation step"
+              "fix(ui): adjust padding for mobile"
+              "refactor: optimize database query"
+              "docs: update API documentation"
+              "chore: update daily logs"
+              "feat: add new validation rule"
+              "style: fix linting errors"
+              "perf: improve load time"
             )
             MSG=${MESSAGES[$RANDOM % ${#MESSAGES[@]}]}
             
             git commit -m "$MSG"
             
-            # Short sleep is fine
-            sleep 1
+            # Sleep 5-30 seconds between commits to look real
+            sleep $(( ( RANDOM % 25 ) + 5 ))
           done
 
-      - name: Maintain Daily Stats
-        run: |
-          mkdir -p .sync/daily
-          DATE=$(date '+%Y-%m-%d')
-          echo "Run at $(date)" >> ".sync/daily/data_${DATE}.log"
-          git add .sync/daily/
-          git commit -m "Daily summary log update" || echo "No daily changes"
-
-      - name: Push all changes
+      - name: Push changes
+        if: steps.check_gate.outputs.skip == 'false'
         run: git push
-          
-      - name: Cleanup old logs
+
+      - name: Cleanup Old Logs
+        if: steps.check_gate.outputs.skip == 'false'
         run: |
-          # Delete density logs older than 3 days
-          find .sync/density -name "*.log" -type f -mtime +3 -delete
+          # Delete logs older than 14 days to keep repo clean
+          find .sync/density -name "*.log" -type f -mtime +14 -delete
           
           git add .sync/density
-          git diff --staged --quiet || git commit -m "Prune old density logs"
+          git diff --staged --quiet || git commit -m "chore: prune old logs"
           git push
